@@ -17,9 +17,9 @@ public class PacienteController {
     private PacienteService pacienteService;
 
     @GetMapping(value = "/emergencias")
-    public ModelAndView findAll() {
+    public ModelAndView findEmergency() {
         ModelAndView mv = new ModelAndView("pacientes/index");
-        List<Paciente> pacientes = this.pacienteService.findAll();
+        List<Paciente> pacientes = this.pacienteService.findEmergency();
         mv.addObject("pacientes", pacientes);
         return mv;
 
@@ -28,7 +28,6 @@ public class PacienteController {
 
     @GetMapping(value = "/emergencias/{id}/delete")
     public String delete(@PathVariable Long id){
-        System.out.println(id);
         this.pacienteService.deleteById(id);
         return "redirect:/emergencias";
     }

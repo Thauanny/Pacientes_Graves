@@ -18,7 +18,7 @@ public class PacienteService {
     private EntityManager entityManager;
 
 
-    public List<Paciente> findAll(){
+    public List<Paciente> findEmergency(){
         Query result = entityManager.createNativeQuery("Select * from paciente where paciente.situation = \"Emergencia\" OR paciente.situation = \"Urgente\" OR paciente.situation = \"Muito Urgente\"", Paciente.class);
        
         @SuppressWarnings("unchecked")
