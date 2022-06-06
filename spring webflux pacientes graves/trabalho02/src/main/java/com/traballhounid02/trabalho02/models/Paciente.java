@@ -1,40 +1,24 @@
 package com.traballhounid02.trabalho02.models;
+import lombok.Data;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.relational.core.mapping.Table;
 
-import com.traballhounid02.trabalho02.utils.Util;
-
-@Entity
+@Data
+@Table("paciente")
 public class Paciente {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(nullable = false)
+
     private String name;
-    @Column(nullable = false)
+
     private String age;
-    @Column(nullable = false)
+
     private String symptoms;
-    @Column(nullable = false)
+
     private String situation;
 
-    public Paciente() {
-        String[] arr = { "Emergencia", "Muito Urgente", "Urgente", "Pouco Urgente", "Não urgente" };
-        int rnd = Util.faker().random().nextInt(arr.length);
-        String symptoms = Util.faker().medical().symptoms();
-        int age = Util.faker().number().numberBetween(1, 100);
-        String name = Util.faker().name().fullName();
 
-        this.name = name;
-        this.age = Integer.toString(age);
-        this.situation = arr[rnd];
-        this.symptoms = symptoms;
-
-    }
     public Long getId() {
         return this.id;
     }
