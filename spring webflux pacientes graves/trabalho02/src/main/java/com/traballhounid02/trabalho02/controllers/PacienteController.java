@@ -32,7 +32,7 @@ public class PacienteController {
     @GetMapping(value = "/emergencias/{id}/delete")
     public String delete(@PathVariable Long id){
         this.pacienteService.deleteById(id);
-        return "redirect:/emergencias";
+        return "redirect:http://localhost:9000/EMERGENCIAS/emergencias";
     }
 
 
