@@ -39,13 +39,16 @@
                         <td class="col-2" th:text="${paciente.getAge()}">Idade</td>
                         <td class="col-2" th:text="${paciente.getSituation()}">Situação</td>
                         <td class="col-2" th:text="${paciente.getSymptoms()}">Sintomas</td>
-                        <td scope="col"><button type="button" class="btn btn-outline-danger"><a th:href="@{/emergencias/{pacienteId}/delete(pacienteId = ${paciente.id})}">Dar Alta</a></button></td>
+                        <td scope="col"><button type="button" class="btn btn-outline-danger"><a th:href="@{http://localhost:9000/EMERGENCIAS/emergencias/{pacienteId}/delete(pacienteId = ${paciente.id})}">Dar Alta</a></button></td>
                        
                     </tr>
                     </tbody>
                 </table>
             </div>
         </div>
+        <div class="row">
+          <button class="btn btn-warning"><a href="http://localhost:9000/CADASTROPACIENTES/cadastro_pacientes">Voltar</a></button>
+      </div>
          
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
